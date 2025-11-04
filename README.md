@@ -92,26 +92,6 @@ The website is now running at: `http://localhost:5173/`
 - Social media links with hover animations
 - Availability status indicator
 
-## 🖼️ Profile Picture Setup
-
-To add your profile picture, replace the placeholder in the Hero section:
-
-1. **Location**: `src/components/Hero.tsx`
-2. **Find this code block**:
-   ```tsx
-   <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-     <span className="text-2xl font-bold text-white">SS</span>
-   </div>
-   ```
-3. **Replace with**:
-   ```tsx
-   <img 
-     src="/path-to-your-image.jpg" 
-     alt="Saurabh Shukla" 
-     className="w-full h-full rounded-full object-cover"
-   />
-   ```
-
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
@@ -141,25 +121,6 @@ npm run preview
 - **Lucide React** - Icons
 - **Vite** - Build tool and dev server
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── Navigation.tsx      # Sticky navigation with dark/light toggle
-│   ├── Hero.tsx           # Hero section with typewriter effect
-│   ├── About.tsx          # About section with personal info
-│   ├── Skills.tsx         # Skills with animated progress bars
-│   ├── Projects.tsx       # Projects grid with filtering
-│   ├── FeaturedProject.tsx # Omegoo project showcase
-│   ├── Education.tsx      # Education and internship details
-│   ├── Contact.tsx        # Contact form with email integration
-│   └── CustomCursor.tsx   # Custom glowing cursor effect
-├── App.tsx               # Main app component with routing
-├── main.tsx             # App entry point
-├── index.css            # Global styles and animations
-└── App.css              # App-specific styles
-```
 
 ## 🎯 Key Features Implemented
 
@@ -180,13 +141,6 @@ src/
 - [x] Loading screen animation
 - [x] Particle effects and smooth transitions
 
-### 📧 Contact Integration
-
-The contact form automatically redirects to the user's default email client with:
-- Pre-filled recipient: `saurabhshukla1966@gmail.com`
-- Subject line from form input
-- Message body with sender details
-- Direct mailto links throughout the site
 
 ### 🎨 Animations & Effects
 
@@ -221,11 +175,7 @@ The website uses a custom gradient color palette:
 
 ## 🚀 Deployment
 
-The project is ready for deployment on platforms like:
-- **Vercel** (recommended)
-- **Netlify**
-- **GitHub Pages**
-- **AWS Amplify**
+- **Vercel** 
 
 ### Build Command
 ```bash
