@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
       icon: <MessageCircle className="w-6 h-6" />,
       title: "Portfolio",
       value: "saurabhshukla.dev",
-      href: "#",
+      href: "https://saurabh-appdev-portfolio.vercel.app/",
       description: "Explore my work"
     }
   ];
