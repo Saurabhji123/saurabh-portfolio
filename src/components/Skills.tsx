@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Code, Globe, Palette, Server, Flame, Smartphone, GitBranch, Cloud, Phone, CreditCard, Eye, Wrench } from 'lucide-react';
+import { MongoLeafIcon, CoffeeCupIcon, PythonIcon, VercelIcon } from './customIcons';
 
 interface Skill {
   name: string;
   level: number;
   category: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 const Skills: React.FC = () => {
@@ -13,34 +15,37 @@ const Skills: React.FC = () => {
   const isInView = useInView(ref, { once: true });
   const [selectedCategory, setSelectedCategory] = useState('All');
 
+  // Reusable custom inline SVGs for technologies without lucid icons
+  // Custom icons centralized in customIcons.tsx for reuse
+
   const skills: Skill[] = [
     // Frontend
-    { name: 'React.js', level: 90, category: 'Frontend', icon: '⚛️' },
-    { name: 'HTML', level: 95, category: 'Frontend', icon: '🌐' },
-    { name: 'CSS', level: 90, category: 'Frontend', icon: '🎨' },
-    { name: 'JavaScript', level: 85, category: 'Frontend', icon: '💻' },
-    { name: 'TailwindCSS', level: 88, category: 'Frontend', icon: '🔧' },
-    
+    { name: 'React.js', level: 90, category: 'Frontend', icon: <Code className="w-5 h-5 text-red-500" /> },
+    { name: 'HTML', level: 95, category: 'Frontend', icon: <Globe className="w-5 h-5 text-red-500" /> },
+    { name: 'CSS', level: 90, category: 'Frontend', icon: <Palette className="w-5 h-5 text-red-500" /> },
+    { name: 'JavaScript', level: 85, category: 'Frontend', icon: <Code className="w-5 h-5 text-red-500" /> },
+    { name: 'TailwindCSS', level: 88, category: 'Frontend', icon: <Wrench className="w-5 h-5 text-red-500" /> },
+
     // Backend
-    { name: 'Node.js', level: 85, category: 'Backend', icon: '🟢' },
-    { name: 'Express.js', level: 82, category: 'Backend', icon: '🚀' },
-    { name: 'MongoDB', level: 80, category: 'Backend', icon: '🍃' },
-    { name: 'Firebase', level: 78, category: 'Backend', icon: '🔥' },
-    
+    { name: 'Node.js', level: 85, category: 'Backend', icon: <Server className="w-5 h-5 text-red-500" /> },
+    { name: 'Express.js', level: 82, category: 'Backend', icon: <Server className="w-5 h-5 text-red-500" /> },
+  { name: 'MongoDB', level: 80, category: 'Backend', icon: <MongoLeafIcon /> },
+    { name: 'Firebase', level: 78, category: 'Backend', icon: <Flame className="w-5 h-5 text-red-500" /> },
+
     // App Development
-    { name: 'Android Studio', level: 85, category: 'App Development', icon: '📱' },
-    { name: 'Kotlin', level: 80, category: 'App Development', icon: '🎯' },
-    { name: 'Java', level: 83, category: 'App Development', icon: '☕' },
-    
+    { name: 'Android Studio', level: 85, category: 'App Development', icon: <Smartphone className="w-5 h-5 text-red-500" /> },
+    { name: 'Kotlin', level: 80, category: 'App Development', icon: <Code className="w-5 h-5 text-red-500" /> },
+  { name: 'Java', level: 83, category: 'App Development', icon: <CoffeeCupIcon /> },
+
     // Other Tools
-    { name: 'Git', level: 88, category: 'Other Tools', icon: '📂' },
-    { name: 'Render', level: 75, category: 'Other Tools', icon: '☁️' },
-    { name: 'Vercel', level: 82, category: 'Other Tools', icon: '⚡' },
-    { name: 'Twilio API', level: 70, category: 'Other Tools', icon: '📞' },
-    { name: 'Razorpay', level: 72, category: 'Other Tools', icon: '💳' },
-    { name: 'OpenCV', level: 75, category: 'Other Tools', icon: '👁️' },
-    { name: 'Google Colab', level: 78, category: 'Other Tools', icon: '🔬' },
-    { name: 'Python', level: 80, category: 'Other Tools', icon: '🐍' },
+    { name: 'Git', level: 88, category: 'Other Tools', icon: <GitBranch className="w-5 h-5 text-red-500" /> },
+    { name: 'Render', level: 75, category: 'Other Tools', icon: <Cloud className="w-5 h-5 text-red-500" /> },
+  { name: 'Vercel', level: 82, category: 'Other Tools', icon: <VercelIcon /> },
+    { name: 'Twilio API', level: 70, category: 'Other Tools', icon: <Phone className="w-5 h-5 text-red-500" /> },
+    { name: 'Razorpay', level: 72, category: 'Other Tools', icon: <CreditCard className="w-5 h-5 text-red-500" /> },
+    { name: 'OpenCV', level: 75, category: 'Other Tools', icon: <Eye className="w-5 h-5 text-red-500" /> },
+    { name: 'Google Colab', level: 78, category: 'Other Tools', icon: <Cloud className="w-5 h-5 text-red-500" /> },
+  { name: 'Python', level: 80, category: 'Other Tools', icon: <PythonIcon /> },
   ];
 
   const categories = ['All', 'Frontend', 'Backend', 'App Development', 'Other Tools'];
@@ -79,10 +84,8 @@ const Skills: React.FC = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
-                Skills & Expertise
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-red-500">
+              Skills & Expertise
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Technologies and tools I use to bring ideas to life
@@ -97,7 +100,7 @@ const Skills: React.FC = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                    ? 'bg-red-600 text-white shadow-lg'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
@@ -119,9 +122,11 @@ const Skills: React.FC = () => {
                 className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 group"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-2xl">{skill.icon}</span>
+                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-red-600/10 border border-red-600/30">
+                    {skill.icon}
+                  </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-lg font-semibold text-white group-hover:text-red-400 transition-colors">
                       {skill.name}
                     </h3>
                     <p className="text-sm text-gray-500">{skill.category}</p>
@@ -139,9 +144,9 @@ const Skills: React.FC = () => {
                       initial={{ width: 0 }}
                       animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
                       transition={{ duration: 1.5, delay: index * 0.1, ease: 'easeOut' }}
-                      className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full relative"
+                      className="h-full bg-red-600 rounded-full relative"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse"></div>
+                      <div className="absolute inset-0 bg-red-500/70 animate-pulse"></div>
                     </motion.div>
                   </div>
                 </div>

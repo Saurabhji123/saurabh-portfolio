@@ -2,35 +2,35 @@
 
 A fully animated, modern React-based developer portfolio website showcasing the work and skills of Saurabh Shukla, a passionate Web and Android Developer from Prayagraj, India.
 
-## 🚀 Live Demo
+## Live Demo
 
 The website is now running at: `http://localhost:5173/`
 
-## ✨ Features
+## Features
 
-### 🧍‍♂️ Personal Information
+### Personal Information
 - **Name**: Saurabh Shukla
 - **Tagline**: Code. Create. Innovate.
 - **Location**: Prayagraj, India
 - **Experience**: 2.5+ years of web development with 7.5M+ traffic
 - **Apps**: Several successful Android apps on Play Store
 
-### 🎨 Design & Animations
+### Design & Animations
 - **Framework**: React + TypeScript + TailwindCSS + Framer Motion
-- **Theme**: Dark mode with neon gradient highlights (blue/purple/cyan)
+- **Theme**: Professional dark mode with solid red accents (no gradients)
 - **Animations**: Smooth scrolling, section fade-ins, card flips, hover effects
 - **Custom Cursor**: Glowing cursor effect with hover interactions
 - **Loading Screen**: Animated loading screen with logo and typewriter effect
 - **Responsive**: Mobile-first design with adaptive transitions
 
-### 🧭 Navigation
+### Navigation
 - Sticky navbar with smooth scroll navigation
-- Logo "Saurabh." with gradient effect
+- Logo "Saurabh." with clean solid styling
 - Dark/Light mode toggle
 - Mobile hamburger menu with animations
 
-### 🏠 Hero Section
-- Full-screen animated gradient background
+### Hero Section
+- Flat dark background (gradients removed)
 - Particle effects animation
 - Profile picture placeholder (SS initials)
 - Typewriter effect for tagline
@@ -38,7 +38,7 @@ The website is now running at: `http://localhost:5173/`
 - Download Resume button (placeholder link)
 - Scroll indicator animation
 
-### 🛠️ Skills Section
+### Skills Section
 - **Frontend**: React.js, HTML, CSS, JavaScript, TailwindCSS
 - **Backend**: Node.js, Express.js, MongoDB, Firebase
 - **App Development**: Android Studio (Kotlin & Java)
@@ -47,7 +47,7 @@ The website is now running at: `http://localhost:5173/`
 - Category filtering (All, Frontend, Backend, App Development, Other Tools)
 - Statistics cards with achievement numbers
 
-### 💼 Projects Section
+### Projects Section
 - **Android Projects**:
   - BMI Calculator - Health-based calculator app
   - Multipurpose Application - Calculator, notes, and converter in one place
@@ -59,14 +59,14 @@ The website is now running at: `http://localhost:5173/`
 - Project filtering by category (All, Web, Android)
 - Links to live demos, GitHub, and Play Store
 
-### 💡 Featured Project
+### Featured Project
 - **Omegoo** spotlight with detailed information
 - Hero banner with animated statistics
 - Feature highlights and tech stack
 - Live project metrics and achievements
 - Interactive demo preview
 
-### 🎓 Education & Experience
+### Education & Experience
 - **Bachelor of Computer Application (BCA)**
   - United Institute of Management (FUGS), Naini, Prayagraj
   - Year: 2022–2025
@@ -76,13 +76,13 @@ The website is now running at: `http://localhost:5173/`
 - **Internship**: MNNIT Prayagraj (March 2024 - March 2025)
   - Project: Caregiver Service Platform (Web + Android)
 
-### 🚀 Achievements
+### Achievements
 - Built apps with 7.5M+ total traffic (Web 2021–2023)
 - Running 2 live game apps on Google Play Store
 - Created scalable web + mobile platforms with API integrations
 - Successfully completed internship at MNNIT Prayagraj
 
-### 💬 Contact Section
+### Contact Section
 - **Email**: saurabhshukla1966@gmail.com (direct integration)
 - **GitHub**: https://github.com/Saurabhji123
 - **LinkedIn**: https://www.linkedin.com/in/saurabh-shukla-0a6914226
@@ -92,7 +92,7 @@ The website is now running at: `http://localhost:5173/`
 - Social media links with hover animations
 - Availability status indicator
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -122,11 +122,11 @@ npm run preview
 - **Vite** - Build tool and dev server
 
 
-## 🎯 Key Features Implemented
+## Key Features Implemented
 
-### ✅ All Requirements Completed
+### All Requirements Completed
 - [x] Modern React + TypeScript + TailwindCSS + Framer Motion
-- [x] Dark theme with neon gradient highlights
+- [x] Dark theme with solid red accents
 - [x] Sticky navigation with smooth scrolling
 - [x] Full-screen animated hero section
 - [x] Typewriter effect for tagline
@@ -142,7 +142,7 @@ npm run preview
 - [x] Particle effects and smooth transitions
 
 
-### 🎨 Animations & Effects
+### Animations & Effects
 
 - Page load animations with staggered children
 - Hover effects on all interactive elements
@@ -152,16 +152,16 @@ npm run preview
 - Progress bar animations
 - Card flip and hover animations
 - Particle background effects
-- Gradient shifting backgrounds
+- Subtle pulses and glows (no gradients)
 - Scale and transform animations on buttons and cards
 
-## 🔧 Customization
+## Customization
 
 ### Color Scheme
-The website uses a custom gradient color palette:
-- **Primary**: Blue (#3b82f6) to Purple (#d946ef)
-- **Secondary**: Cyan (#06b6d4) accents
-- **Background**: Dark gradients with transparency
+- Color palette:
+- **Primary**: Red 600 (#dc2626) with hover Red 700 (#b91c1c)
+- **Highlights**: Red 400 (#f87171)
+- **Background**: Neutral dark surfaces (#0b0f1a, slate)
 - **Text**: White with gray variations for hierarchy
 
 ### Fonts
@@ -173,7 +173,7 @@ The website uses a custom gradient color palette:
 - **Tablet**: 768px - 1024px
 - **Desktop**: > 1024px
 
-## 🚀 Deployment
+## Deployment
 
 - **Vercel** 
 
@@ -185,7 +185,7 @@ npm run build
 ### Build Output
 The `dist/` folder contains the production-ready files.
 
-## 📞 Support
+## Support
 
 For any questions or customizations, contact:
 - **Email**: saurabhshukla1966@gmail.com
@@ -194,6 +194,6 @@ For any questions or customizations, contact:
 
 ---
 
-**Built with ❤️ by Saurabh Shukla**
+**Built by Saurabh Shukla**
 
 *Code. Create. Innovate.*

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ExternalLink, Github, Smartphone, Globe, Play, Filter } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Globe, Play, Filter, Star } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -103,7 +103,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-black/50 to-black/80">
+    <section id="projects" className="py-20 bg-[#0b0f1a]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -113,10 +113,8 @@ const Projects: React.FC = () => {
         >
           {/* Section Header */}
           <motion.div variants={cardVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
-                Featured Projects
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              <span className="text-red-500">Featured Projects</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Showcasing my latest work in web and mobile development
@@ -133,7 +131,7 @@ const Projects: React.FC = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                      ? 'bg-red-600 hover:bg-red-700 text-white shadow-lg'
                       : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
@@ -159,10 +157,12 @@ const Projects: React.FC = () => {
               >
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                    <span className="text-4xl opacity-50">
-                      {project.category === 'Web' ? '🌐' : '📱'}
-                    </span>
+                  <div className="w-full h-full bg-slate-800/40 flex items-center justify-center">
+                    {project.category === 'Web' ? (
+                      <Globe className="w-12 h-12 opacity-50 text-red-500" />
+                    ) : (
+                      <Smartphone className="w-12 h-12 opacity-50 text-red-500" />
+                    )}
                   </div>
                   
                   {/* Overlay on hover */}
@@ -214,8 +214,8 @@ const Projects: React.FC = () => {
                   {/* Featured Badge */}
                   {project.featured && (
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold rounded-full">
-                        ⭐ FEATURED
+                      <span className="px-3 py-1 bg-yellow-400/90 text-black text-xs font-bold rounded-full flex items-center gap-1">
+                        <Star className="w-3 h-3 fill-yellow-400 text-yellow-600" /> FEATURED
                       </span>
                     </div>
                   )}
@@ -231,7 +231,7 @@ const Projects: React.FC = () => {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">
                     {project.title}
                   </h3>
                   
@@ -258,7 +258,7 @@ const Projects: React.FC = () => {
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                        className="text-red-400 hover:text-red-300 transition-colors text-sm font-medium"
                       >
                         Live Demo →
                       </a>
@@ -302,7 +302,7 @@ const Projects: React.FC = () => {
               href="https://github.com/Saurabhji123"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-full font-semibold transition-colors"
             >
               <Github className="w-5 h-5" />
               View More on GitHub

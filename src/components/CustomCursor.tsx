@@ -58,7 +58,7 @@ const CustomCursor: React.FC = () => {
       <motion.div
         className="fixed top-0 left-0 w-4 h-4 pointer-events-none z-[9999] mix-blend-difference"
         style={{
-          backgroundColor: isHovering ? '#60a5fa' : '#ffffff',
+          backgroundColor: isHovering ? '#dc2626' : '#ffffff',
           borderRadius: '50%',
           transform: 'translate(-50%, -50%)',
         }}
@@ -80,7 +80,7 @@ const CustomCursor: React.FC = () => {
         className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[9998] opacity-30"
         style={{
           background: `radial-gradient(circle, ${
-            isHovering ? 'rgba(139, 92, 246, 0.6)' : 'rgba(59, 130, 246, 0.4)'
+            isHovering ? 'rgba(220, 38, 38, 0.6)' : 'rgba(185, 28, 28, 0.4)'
           }, transparent)`,
           borderRadius: '50%',
           transform: 'translate(-50%, -50%)',
@@ -120,7 +120,7 @@ const CustomCursor: React.FC = () => {
 
       {/* Trail Effect */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 pointer-events-none z-[9996] bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-60"
+        className="fixed top-0 left-0 w-2 h-2 pointer-events-none z-[9996] bg-red-500 rounded-full opacity-60"
         style={{
           transform: 'translate(-50%, -50%)',
         }}
@@ -156,7 +156,7 @@ const CustomCursor: React.FC = () => {
           }}
           transition={{ duration: 0.4 }}
         >
-          <div className="w-16 h-16 border-2 border-blue-400 rounded-full"></div>
+          <div className="w-16 h-16 border-2 border-red-500 rounded-full"></div>
         </motion.div>
       )}
 

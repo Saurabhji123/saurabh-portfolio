@@ -10,26 +10,22 @@ const About: React.FC = () => {
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Web Development",
-      description: "2.5+ years of experience building scalable web applications with modern technologies",
-      color: "from-blue-500 to-cyan-500"
+      description: "2.5+ years of experience building scalable web applications with modern technologies"
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
       title: "Mobile Development", 
-      description: "Native Android development with Kotlin & Java, published apps on Google Play Store",
-      color: "from-green-500 to-emerald-500"
+      description: "Native Android development with Kotlin & Java, published apps on Google Play Store"
     },
     {
       icon: <Code className="w-8 h-8" />,
       title: "Full Stack Solutions",
-      description: "End-to-end development from concept to deployment with API integrations",
-      color: "from-purple-500 to-pink-500"
+      description: "End-to-end development from concept to deployment with API integrations"
     },
     {
       icon: <Award className="w-8 h-8" />,
       title: "Proven Results",
-      description: "7.5M+ web traffic generated and multiple successful project deployments",
-      color: "from-yellow-500 to-orange-500"
+      description: "7.5M+ web traffic generated and multiple successful project deployments"
     }
   ];
 
@@ -63,10 +59,8 @@ const About: React.FC = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
-                About Me
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-red-500">
+              About Me
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Passionate developer dedicated to creating innovative digital solutions
@@ -82,12 +76,7 @@ const About: React.FC = () => {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                I'm a <span className="text-blue-400 font-semibold">Full-Stack Developer</span> from Prayagraj, India, 
-                specializing in building <span className="text-purple-400 font-semibold">high-performance web applications</span> and 
-                <span className="text-green-400 font-semibold"> scalable Android solutions</span>. 
-                My flagship project, <span className="text-cyan-400 font-semibold">Omegoo</span>, has generated 
-                <span className="text-yellow-400 font-semibold"> 7.5M+ web traffic</span>, demonstrating my ability to create 
-                platforms that users love and businesses value.
+                I'm a <span className="text-red-400 font-semibold">full-stack developer</span> from Prayagraj, India building fast, reliable <span className="text-red-400 font-semibold">web</span> & <span className="text-red-400 font-semibold">Android</span> products.
               </motion.p>
 
               <motion.p 
@@ -96,12 +85,7 @@ const About: React.FC = () => {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                With <span className="text-blue-400 font-semibold">2.5+ years of hands-on experience</span>, I've mastered the 
-                <span className="text-purple-400 font-semibold"> MERN stack</span> (MongoDB, Express.js, React.js, Node.js) and 
-                <span className="text-green-400 font-semibold"> Android development with Kotlin/Java</span>. 
-                I thrive on solving complex problems, optimizing performance, and delivering pixel-perfect user experiences. 
-                Currently pursuing my <span className="text-cyan-400 font-semibold">MCA from Lovely Professional University</span>, 
-                I'm always learning cutting-edge technologies to stay ahead in the industry.
+                2.5+ yrs with <span className="text-red-400 font-semibold">MERN</span> & <span className="text-red-400 font-semibold">Kotlin/Java</span>; performance, clean UI & problem solving. MCA student (<span className="text-red-400 font-semibold">LPU</span>).
               </motion.p>
 
               <motion.p 
@@ -110,10 +94,7 @@ const About: React.FC = () => {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                My projects have generated <span className="text-yellow-400 font-semibold">7.5M+ total web traffic</span> 
-                and I currently have <span className="text-pink-400 font-semibold">2 live game applications</span> 
-                running on Google Play Store. I love working with cutting-edge technologies and building 
-                scalable solutions with seamless API integrations.
+                Built a news platform with <span className="text-red-400 font-semibold">7.5M+ visits</span> and shipped multiple <span className="text-red-400 font-semibold">Android apps</span>.
               </motion.p>
 
               <motion.div
@@ -122,13 +103,12 @@ const About: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="pt-4"
               >
-                <h3 className="text-xl font-semibold text-white mb-4">What drives me:</h3>
+                <h3 className="text-xl font-semibold text-red-500 mb-4">Focus Areas:</h3>
                 <ul className="space-y-2">
                   {[
-                    "Building user-centric applications that solve real problems",
-                    "Exploring new technologies and staying updated with industry trends", 
-                    "Creating seamless experiences across web and mobile platforms",
-                    "Collaborating with teams to bring innovative ideas to life"
+                    "User-centric solutions",
+                    "Performance across web & mobile",
+                    "Collaboration & continuous learning"
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -137,7 +117,7 @@ const About: React.FC = () => {
                       transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                       className="flex items-start gap-3 text-gray-300"
                     >
-                      <span className="text-blue-400 mt-1">✓</span>
+                      <span className="text-red-400 mt-1">•</span>
                       {item}
                     </motion.li>
                   ))}
@@ -157,13 +137,13 @@ const About: React.FC = () => {
                   className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 group"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
-                  <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${highlight.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex p-3 rounded-lg bg-red-700/30 mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <span className="text-white">
                       {highlight.icon}
                     </span>
                   </div>
                   
-                  <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                  <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-red-400 transition-colors">
                     {highlight.title}
                   </h4>
                   
@@ -182,20 +162,19 @@ const About: React.FC = () => {
           >
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-white/10"
+              className="bg-slate-900/60 rounded-2xl p-8 border border-white/10"
             >
               <h3 className="text-2xl font-bold text-white mb-4">
                 Ready to work together?
               </h3>
               <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-                I'm always excited about new challenges and opportunities to create something amazing. 
-                Let's discuss your project and bring your vision to life.
+                Open to new projects—let's build something impactful.
               </p>
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
     const particles = Array.from({ length: 50 }, (_, i) => (
       <motion.div
         key={i}
-        className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-70"
+        className="absolute w-1 h-1 bg-red-400 rounded-full opacity-70"
         initial={{
           x: Math.random() * window.innerWidth,
           y: Math.random() * window.innerHeight,
@@ -50,11 +50,11 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden gradient-bg pt-24">
+  <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0b0f10] pt-24">
       <Particles />
       
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-cyan-900/20"></div>
+  {/* Background overlay removed for flat red theme */}
+  <div className="absolute inset-0"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-8 flex justify-center"
           >
-            <div className="inline-block rounded-2xl overflow-hidden bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 hover-glow p-0.5">
+            <div className="inline-block rounded-2xl overflow-hidden bg-slate-800 hover-glow p-0.5 border border-white/10">
               {/* Profile picture - Replace /images/profile.jpg with your actual image */}
               <img 
                 src="/images/profile.jpg" 
@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
                   if (fallback) fallback.style.display = 'flex';
                 }}
               />
-              <div className="w-40 h-48 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 hidden items-center justify-center">
+              <div className="w-40 h-48 rounded-xl bg-slate-700 hidden items-center justify-center">
                 <span className="text-3xl font-bold text-white">SS</span>
               </div>
             </div>
@@ -90,10 +90,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent glow-text">
-                Saurabh Shukla
-              </span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+              Saurabh Shukla
             </h1>
           </motion.div>
 
@@ -114,11 +112,9 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Full-Stack Developer specializing in <span className="text-blue-400 font-semibold">React.js</span>, <span className="text-green-400 font-semibold">Node.js</span>, and <span className="text-purple-400 font-semibold">Android Development</span>. 
-            Built high-traffic platforms like <span className="text-cyan-400 font-semibold">Omegoo</span> (7.5M+ visitors) and innovative AI-powered solutions. 
-            Passionate about creating scalable, user-centric applications that solve real-world problems and drive business growth.
+            Full-Stack & Android Developer. Built a news platform with <span className="text-red-400 font-semibold">7.5M+ visits</span>. Now building <span className="text-red-400 font-semibold">Omegoo</span> (strangers chat app) and <span className="text-red-400 font-semibold">Vaaniweb</span> (voice-to-website generator). Clean code, fast delivery, real impact.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -129,11 +125,11 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <motion.a
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(59, 130, 246, 0.4)' }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="/documents/resume.pdf"
               download="Saurabh_Shukla_Resume.pdf"
-              className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+              className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-colors"
             >
               <Download size={20} />
               Download Resume
@@ -143,7 +139,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('contact')}
-              className="flex items-center gap-2 border-2 border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:border-white/40 hover:bg-white/10 transition-all duration-300"
+              className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-8 py-4 rounded-full font-semibold transition-colors"
             >
               Let's Connect
             </motion.button>

@@ -13,7 +13,6 @@ import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -32,16 +31,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+    document.documentElement.classList.add('dark');
+  }, []);
 
   // Loading Screen Component
   const LoadingScreen: React.FC = () => (
@@ -64,7 +55,7 @@ function App() {
           }}
           className="w-20 h-20 mx-auto mb-8"
         >
-          <div className="w-full h-full bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 rounded-full flex items-center justify-center">
+          <div className="w-full h-full bg-red-600 rounded-full flex items-center justify-center">
             <span className="text-2xl font-bold text-white">SS</span>
           </div>
         </motion.div>
@@ -73,7 +64,7 @@ function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent mb-4"
+          className="text-4xl font-bold text-white mb-4"
         >
           Saurabh Shukla
         </motion.h1>
@@ -98,7 +89,7 @@ function App() {
             {[0, 1, 2].map((i) => (
               <motion.div
                 key={i}
-                className="w-3 h-3 bg-blue-400 rounded-full"
+                className="w-3 h-3 bg-red-500 rounded-full"
                 animate={{ 
                   y: [0, -10, 0],
                   opacity: [0.3, 1, 0.3]
@@ -117,7 +108,7 @@ function App() {
   );
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
+  <div className={`min-h-screen dark`}>
       <CustomCursor />
       
       <AnimatePresence mode="wait">
@@ -132,7 +123,7 @@ function App() {
             className="relative"
           >
             {/* Navigation */}
-            <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <Navigation />
             
             {/* Main Content */}
             <main className="relative">
@@ -163,9 +154,7 @@ function App() {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                   <div className="mb-4 md:mb-0">
-                    <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                      Saurabh Shukla
-                    </h3>
+                    <h3 className="text-xl font-bold text-red-500">Saurabh Shukla</h3>
                     <p className="text-gray-400 text-sm">
                       Web & Android Developer
                     </p>

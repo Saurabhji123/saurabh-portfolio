@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, Github, Linkedin, MapPin, Send, ExternalLink, MessageCircle } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Send, ExternalLink, MessageCircle, CheckCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const ref = useRef(null);
@@ -11,6 +11,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
+  const [showToast, setShowToast] = useState(false);
 
   const contactInfo = [
     {
@@ -48,8 +49,8 @@ const Contact: React.FC = () => {
       name: "LinkedIn", 
       icon: <Linkedin className="w-6 h-6" />,
       href: "https://www.linkedin.com/in/saurabh-shukla-0a6914226",
-      color: "hover:text-blue-400",
-      bgColor: "hover:bg-blue-500/20"
+      color: "hover:text-red-400",
+      bgColor: "hover:bg-red-500/10"
     },
     {
       name: "Email",
@@ -85,13 +86,13 @@ const Contact: React.FC = () => {
     // Open email client with pre-filled information
     const mailtoLink = `mailto:saurabhshukla1966@gmail.com?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
-    
-    // Show success message
+
+    // Non-blocking toast confirmation
+    setShowToast(true);
     setTimeout(() => {
-      alert('✅ Email client opened! Please send the email from your email application.');
-      // Reset form after showing message
+      setShowToast(false);
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 100);
+    }, 2500);
   };
 
   const containerVariants = {
@@ -114,11 +115,11 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-cyan-900/10 relative overflow-hidden">
+    <section id="contact" className="py-20 bg-[#0b0f1a] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-red-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-red-700/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -130,11 +131,7 @@ const Contact: React.FC = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
-                Let's Connect
-              </span>
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-red-500">Let's Connect</h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
             </p>
@@ -144,7 +141,7 @@ const Contact: React.FC = () => {
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
+                <h3 className="text-2xl font-bold text-red-500 mb-6">Send Me a Message</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -162,7 +159,7 @@ const Contact: React.FC = () => {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 transition-all duration-300"
                         placeholder="Enter your name"
                       />
                     </motion.div>
@@ -181,7 +178,7 @@ const Contact: React.FC = () => {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 transition-all duration-300"
                         placeholder="Enter your email"
                       />
                     </motion.div>
@@ -200,7 +197,7 @@ const Contact: React.FC = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 transition-all duration-300"
                       placeholder="What's this about?"
                     />
                   </motion.div>
@@ -219,7 +216,7 @@ const Contact: React.FC = () => {
                       rows={6}
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300 resize-none"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 transition-all duration-300 resize-none"
                       placeholder="Tell me about your project..."
                     />
                   </motion.div>
@@ -228,14 +225,14 @@ const Contact: React.FC = () => {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 group"
+                    className="w-full flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors group"
                   >
                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     Send Message
                   </motion.button>
 
                   <p className="text-gray-400 text-sm text-center">
-                    Your email client will open with the message pre-filled to <strong className="text-blue-400">saurabhshukla1966@gmail.com</strong>
+                    Your email client will open with the message pre-filled to <strong className="text-red-400">saurabhshukla1966@gmail.com</strong>
                   </p>
                 </form>
               </div>
@@ -254,7 +251,7 @@ const Contact: React.FC = () => {
                     className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 group"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white group-hover:scale-110 transition-transform duration-300">
+                      <div className="p-3 bg-slate-700 rounded-lg text-white group-hover:scale-110 transition-transform duration-300">
                         {info.icon}
                       </div>
                       <div className="flex-1">
@@ -262,7 +259,7 @@ const Contact: React.FC = () => {
                         {info.href ? (
                           <a
                             href={info.href}
-                            className="text-blue-400 hover:text-blue-300 transition-colors font-medium flex items-center gap-2"
+                            className="text-red-400 hover:text-red-300 transition-colors font-medium flex items-center gap-2"
                           >
                             {info.value}
                             <ExternalLink className="w-4 h-4" />
@@ -312,7 +309,7 @@ const Contact: React.FC = () => {
                   href="mailto:saurabhshukla1966@gmail.com"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="block w-full text-center bg-gradient-to-r from-purple-500 to-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-700 transition-all duration-300"
+                  className="block w-full text-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors"
                 >
                   Quick Email Me
                 </motion.a>
@@ -338,6 +335,15 @@ const Contact: React.FC = () => {
           </div>
         </motion.div>
       </div>
+
+      {showToast && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <div className="flex items-center gap-3 bg-white/10 border border-white/20 rounded-lg px-4 py-3 backdrop-blur-sm shadow-lg">
+            <CheckCircle className="w-5 h-5 text-green-400" />
+            <span className="text-gray-200 text-sm">Email client opened. Please send the email from your app.</span>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

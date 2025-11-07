@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin, Award, Building, BookOpen } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, Building, BookOpen, Globe, Smartphone, Wrench, Zap, Briefcase } from 'lucide-react';
 
 const Education: React.FC = () => {
   const ref = useRef(null);
@@ -16,7 +16,7 @@ const Education: React.FC = () => {
       status: "Current",
       description: "Pursuing advanced studies in computer science with focus on software development, AI, and system design.",
       highlights: ["Advanced Programming", "Software Engineering", "Database Systems", "AI & Machine Learning"],
-      icon: "🎓"
+  icon: <GraduationCap className="w-6 h-6 text-white" />
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const Education: React.FC = () => {
       status: "Completed",
       description: "Comprehensive undergraduate program covering programming fundamentals, web development, and database management.",
       highlights: ["Web Development", "Programming Languages", "Database Management", "Software Testing"],
-      icon: "🎓"
+  icon: <GraduationCap className="w-6 h-6 text-white" />
     }
   ];
 
@@ -48,22 +48,22 @@ const Education: React.FC = () => {
 
   const achievements = [
     {
-      icon: "🌐",
+      icon: <Globe className="w-6 h-6 text-red-500" />,
       title: "7.5M+ Web Traffic",
       description: "Generated massive web traffic across projects (2021-2023)"
     },
     {
-      icon: "📱",
+      icon: <Smartphone className="w-6 h-6 text-red-500" />,
       title: "Live Android Apps",
       description: "Successfully launched 2 game apps on Google Play Store"
     },
     {
-      icon: "🔧",
+      icon: <Wrench className="w-6 h-6 text-red-500" />,
       title: "API Integrations",
       description: "Implemented Twilio, Razorpay, and other service integrations"
     },
     {
-      icon: "⚡",
+      icon: <Zap className="w-6 h-6 text-red-500" />,
       title: "Scalable Solutions",
       description: "Built platforms supporting thousands of concurrent users"
     }
@@ -89,7 +89,7 @@ const Education: React.FC = () => {
   };
 
   return (
-    <section id="education" className="py-20 bg-gradient-to-b from-black/80 to-black/50">
+  <section id="education" className="py-20 bg-black/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -99,11 +99,7 @@ const Education: React.FC = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
-                Education & Experience
-              </span>
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-red-500">Education & Experience</h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               My academic journey and professional experience in technology
             </p>
@@ -113,7 +109,7 @@ const Education: React.FC = () => {
             {/* Education Timeline */}
             <motion.div variants={itemVariants}>
               <div className="flex items-center gap-3 mb-8">
-                <GraduationCap className="w-8 h-8 text-blue-400" />
+                <GraduationCap className="w-8 h-8 text-red-500" />
                 <h3 className="text-2xl font-bold text-white">Education</h3>
               </div>
 
@@ -128,13 +124,13 @@ const Education: React.FC = () => {
                   >
                     {/* Timeline Line */}
                     {index < educationData.length - 1 && (
-                      <div className="absolute left-6 top-16 w-0.5 h-24 bg-gradient-to-b from-blue-400 to-purple-500"></div>
+                      <div className="absolute left-6 top-16 w-0.5 h-24 bg-red-600"></div>
                     )}
                     
                     <div className="flex gap-6">
                       {/* Timeline Dot */}
                       <div className="relative">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-2xl">
+                        <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
                           {edu.icon}
                         </div>
                         {edu.status === 'Current' && (
@@ -151,8 +147,8 @@ const Education: React.FC = () => {
                         <div className="flex flex-wrap items-center gap-2 mb-3">
                           <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                             edu.status === 'Current' 
-                              ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
-                              : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                : 'bg-red-600/20 text-red-400 border border-red-600/30'
                           }`}>
                             {edu.status}
                           </span>
@@ -198,7 +194,7 @@ const Education: React.FC = () => {
               {/* Internship Section */}
               <div>
                 <div className="flex items-center gap-3 mb-8">
-                  <BookOpen className="w-8 h-8 text-purple-400" />
+                  <BookOpen className="w-8 h-8 text-red-500" />
                   <h3 className="text-2xl font-bold text-white">Internship</h3>
                 </div>
 
@@ -206,12 +202,12 @@ const Education: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300"
+                  className="bg-slate-900/60 rounded-xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300"
                 >
                   <div className="flex items-start justify-between mb-6">
                     <div>
                       <h4 className="text-2xl font-bold text-white mb-2">{internshipData.title}</h4>
-                      <div className="flex items-center gap-2 text-purple-400 mb-2">
+                      <div className="flex items-center gap-2 text-red-400 mb-2">
                         <Building className="w-5 h-5" />
                         <span className="text-lg font-semibold">{internshipData.company}</span>
                       </div>
@@ -220,7 +216,9 @@ const Education: React.FC = () => {
                         {internshipData.duration}
                       </div>
                     </div>
-                    <div className="text-4xl">💼</div>
+                    <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-red-600/10 border border-red-600/30">
+                      <Briefcase className="w-6 h-6 text-red-500" />
+                    </div>
                   </div>
 
                   <div className="mb-6">
@@ -234,7 +232,7 @@ const Education: React.FC = () => {
                       {internshipData.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-md text-sm border border-purple-500/30"
+                          className="px-3 py-1 bg-red-600/20 text-red-300 rounded-md text-sm border border-red-600/30"
                         >
                           {tech}
                         </span>
@@ -247,7 +245,7 @@ const Education: React.FC = () => {
                     <ul className="space-y-2">
                       {internshipData.achievements.map((achievement, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-gray-300">
-                          <span className="text-green-400 mt-1">✓</span>
+                          <span className="text-red-400 mt-1">•</span>
                           {achievement}
                         </li>
                       ))}
@@ -259,7 +257,7 @@ const Education: React.FC = () => {
               {/* Achievements Section */}
               <div>
                 <div className="flex items-center gap-3 mb-8">
-                  <Award className="w-8 h-8 text-yellow-400" />
+                  <Award className="w-8 h-8 text-red-500" />
                   <h3 className="text-2xl font-bold text-white">Achievements</h3>
                 </div>
 
@@ -272,8 +270,10 @@ const Education: React.FC = () => {
                       transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                       className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-white/20 transition-all duration-300 group"
                     >
-                      <div className="text-3xl mb-3">{achievement.icon}</div>
-                      <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      <div className="mb-3 w-10 h-10 flex items-center justify-center rounded-lg bg-red-600/10 border border-red-600/30">
+                        {achievement.icon}
+                      </div>
+                      <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-red-400 transition-colors">
                         {achievement.title}
                       </h4>
                       <p className="text-gray-400 text-sm">{achievement.description}</p>

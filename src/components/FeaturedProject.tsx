@@ -14,18 +14,8 @@ const FeaturedProject: React.FC = () => {
       description: "A revolutionary platform where strangers get connected randomly, creating meaningful conversations and exploring new cultures while building global friendships.",
       icon: (
         <svg className="w-20 h-20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="35" cy="35" r="30" fill="url(#omegoo-gradient1)" />
-          <circle cx="65" cy="65" r="30" fill="url(#omegoo-gradient2)" />
-          <defs>
-            <linearGradient id="omegoo-gradient1" x1="0" y1="0" x2="70" y2="70">
-              <stop offset="0%" stopColor="#3b82f6" />
-              <stop offset="100%" stopColor="#8b5cf6" />
-            </linearGradient>
-            <linearGradient id="omegoo-gradient2" x1="30" y1="30" x2="100" y2="100">
-              <stop offset="0%" stopColor="#8b5cf6" />
-              <stop offset="100%" stopColor="#ec4899" />
-            </linearGradient>
-          </defs>
+          <circle cx="35" cy="35" r="30" fill="#b91c1c" opacity="0.6" />
+          <circle cx="65" cy="65" r="30" fill="#ef4444" opacity="0.6" />
         </svg>
       ),
       features: [
@@ -49,16 +39,9 @@ const FeaturedProject: React.FC = () => {
       description: "Revolutionary AI-powered platform that converts your voice commands into fully functional websites in just 5 seconds. Simply speak what you want, and watch as Vaaniweb creates a beautiful, responsive website instantly.",
       icon: (
         <svg className="w-20 h-20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="45" fill="url(#vaaniweb-gradient)" />
+          <circle cx="50" cy="50" r="45" fill="#991b1b" opacity="0.6" />
           <path d="M50 25 L50 75 M35 40 L50 50 L35 60 M65 40 L50 50 L65 60" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           <circle cx="50" cy="50" r="8" fill="white" />
-          <defs>
-            <linearGradient id="vaaniweb-gradient" x1="0" y1="0" x2="100" y2="100">
-              <stop offset="0%" stopColor="#06b6d4" />
-              <stop offset="50%" stopColor="#3b82f6" />
-              <stop offset="100%" stopColor="#8b5cf6" />
-            </linearGradient>
-          </defs>
         </svg>
       ),
       features: [
@@ -81,10 +64,10 @@ const FeaturedProject: React.FC = () => {
   const currentProject = projects[activeProject];
 
   return (
-    <section id="featured-project" className="py-20 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-cyan-900/10 relative overflow-hidden">
+    <section id="featured-project" className="py-20 bg-[#0b0f1a] relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-700/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -113,7 +96,7 @@ const FeaturedProject: React.FC = () => {
                 onClick={() => setActiveProject('omegoo')}
                 className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeProject === 'omegoo'
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
+                    ? 'bg-red-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
@@ -123,7 +106,7 @@ const FeaturedProject: React.FC = () => {
                 onClick={() => setActiveProject('vaaniweb')}
                 className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeProject === 'vaaniweb'
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                    ? 'bg-red-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
@@ -135,11 +118,7 @@ const FeaturedProject: React.FC = () => {
               {currentProject.icon}
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
-                {currentProject.name}
-              </span>
-            </h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">{currentProject.name}</h2>
             
             <p className="text-2xl md:text-3xl text-gray-300 font-light mb-4">
               "{currentProject.tagline}"
@@ -161,7 +140,7 @@ const FeaturedProject: React.FC = () => {
               <div className="relative">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500"
+                  className="bg-slate-900/60 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500"
                 >
                   <div className="bg-gray-800 rounded-lg p-4 mb-4">
                     <div className="flex items-center gap-2 mb-4">
@@ -173,9 +152,9 @@ const FeaturedProject: React.FC = () => {
                       </div>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded p-6 text-center">
+                    <div className="bg-slate-800 rounded p-6 text-center">
                       <div className="text-white text-2xl font-bold mb-4">{currentProject.name}</div>
-                      <div className="text-blue-100 mb-6">{currentProject.tagline}</div>
+                      <div className="text-gray-300 mb-6">{currentProject.tagline}</div>
                       <div className="flex justify-center gap-4">
                         {currentProject.features.slice(0, 2).map((feature, idx) => (
                           <div key={idx} className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
@@ -189,9 +168,10 @@ const FeaturedProject: React.FC = () => {
                   <motion.div
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold"
+                    className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2"
                   >
-                    🟢 LIVE
+                    <span className="inline-block w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    LIVE
                   </motion.div>
                 </motion.div>
               </div>
@@ -212,12 +192,12 @@ const FeaturedProject: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.a
-                  whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(59, 130, 246, 0.4)' }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href={currentProject.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 justify-center"
+                  className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-colors justify-center"
                 >
                   <ExternalLink className="w-5 h-5" />
                   Visit Live Site
@@ -253,7 +233,7 @@ const FeaturedProject: React.FC = () => {
                       transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                       className="flex items-start gap-4 p-4 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300"
                     >
-                      <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white">
+                      <div className="p-2 bg-slate-700 rounded-lg text-white">
                         {feature.icon}
                       </div>
                       <div>
@@ -276,7 +256,7 @@ const FeaturedProject: React.FC = () => {
                       transition={{ duration: 0.5, delay: 1.0 + index * 0.1 }}
                       className="text-center p-6 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group"
                     >
-                      <div className="text-2xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                      <div className="text-2xl font-bold text-white mb-1 group-hover:text-red-400 transition-colors">
                         {stat.number}
                       </div>
                       <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -294,27 +274,27 @@ const FeaturedProject: React.FC = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="mt-16 flex flex-wrap justify-center gap-6"
           >
-            <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 px-6 py-3 rounded-full border border-yellow-500/30">
+            <div className="flex items-center gap-2 bg-red-600/10 px-6 py-3 rounded-full border border-red-600/30">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#fbbf24" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#ef4444" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-yellow-400 font-semibold">Featured Project</span>
+              <span className="text-red-400 font-semibold">Featured Project</span>
             </div>
             
-            <div className="flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-6 py-3 rounded-full border border-green-500/30">
+            <div className="flex items-center gap-2 bg-red-600/10 px-6 py-3 rounded-full border border-red-600/30">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L12 6M12 18L12 22M6 12L2 12M22 12L18 12M19.07 4.93L16.24 7.76M7.76 16.24L4.93 19.07M19.07 19.07L16.24 16.24M7.76 7.76L4.93 4.93" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="12" r="3" fill="#10b981"/>
+                <path d="M12 2L12 6M12 18L12 22M6 12L2 12M22 12L18 12M19.07 4.93L16.24 7.76M7.76 16.24L4.93 19.07M19.07 19.07L16.24 16.24M7.76 7.76L4.93 4.93" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="12" cy="12" r="3" fill="#ef4444"/>
               </svg>
-              <span className="text-green-400 font-semibold">High Traffic</span>
+              <span className="text-red-400 font-semibold">High Traffic</span>
             </div>
             
-            <div className="flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-6 py-3 rounded-full border border-purple-500/30">
+            <div className="flex items-center gap-2 bg-red-600/10 px-6 py-3 rounded-full border border-red-600/30">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L12 22M5 12L19 12" stroke="#a855f7" strokeWidth="2" strokeLinecap="round"/>
-                <path d="M12 6L19 12L12 18L5 12L12 6Z" fill="#a855f7"/>
+                <path d="M12 2L12 22M5 12L19 12" stroke="#ef4444" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M12 6L19 12L12 18L5 12L12 6Z" fill="#ef4444"/>
               </svg>
-              <span className="text-purple-400 font-semibold">Scalable Platform</span>
+              <span className="text-red-400 font-semibold">Scalable Platform</span>
             </div>
           </motion.div>
         </motion.div>
